@@ -1,0 +1,13 @@
+{
+  "name": "{{basename}}",
+  "version": "0.0.1",
+  "description": "{{basename}}",
+  "author": "Localytics",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/localytics/{{basename}}"
+  },
+  "dependencies": {}
+}

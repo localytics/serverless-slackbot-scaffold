@@ -1,5 +1,9 @@
 #{{basename}}
 
+## Development
+
+This project uses the `localytics-slack` node module found here: <https://github.com/localytics/localytics-slack>. For documentation on how to add subcommands to the router, see the README.
+
 ## Configuration
 
 Install the necessary node modules by running `npm install` in both the root directory and `nodejs` directory:

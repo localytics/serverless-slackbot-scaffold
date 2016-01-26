@@ -11,7 +11,7 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var slack = require('localytics-slack/slackbot');
+var slack = require('localytics-slack');
 
 // Slack subcommands
 module.exports.ping = function(options, callback) {

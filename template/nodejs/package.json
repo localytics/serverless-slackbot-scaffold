@@ -7,15 +7,18 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/localytics/{{basename}}"
+    "url": "git://github.com/localytics/{{basename}}/tree/master/nodejs"
   },
   "keywords": [],
   "devDependencies": {
+    "chai": "^2.1.2",
+    "dirty-chai": "1.2.2",
     "mocha": "^2.2.1",
-    "sinon": "^1.14.1"
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
   },
   "dependencies": {
-    "localytics-slack": "git+ssh://git@github.com/localytics/npm-slack.git",
+    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git",
     "serverless-helpers-js": "~0.0.3"
   },
   "scripts": {

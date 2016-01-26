@@ -60,6 +60,7 @@ describe('handler', function() {
       }, context);
       expect(context.done).to.have.been.calledOnce();
       expect(context.done).to.have.been.calledWithExactly(
+        undefined,
         slack.ephemeralResponse(
           'ping: Ping the lambda\n' +
           'whoami: Figure out who you are'

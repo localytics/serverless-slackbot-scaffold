@@ -11,61 +11,11 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var _ = require('lodash'),
-  qs = require('qs');
+var slack = require('localytics-slack/slackbot');
 
 // Lambda Handler
-module.exports.handler = function(event, context) {
-  return exports.router(exports.commands())(event, context);
-};
-
-module.exports.commands = function() {
-  return {
-    ping: function(context, options) {
-      context.succeed({
-        text: 'Hello World',
-        response_type: 'in_channel'
-      });
-    },
-    help: function(context, options) {
-      context.succeed({
-        text: "Here's how to use {{basename}}:",
-        attachments: [
-          {
-            text: 'ping: Ensure this bot is running\n' +
-              'help: Show this help text'
-          }
-        ],
-        response_type: 'ephemeral'
-      });
-    }
-  };
-};
-
-module.exports.router = function (commands) {
-  return function (event, context) {
-    var response;
-    var body = qs.parse(event.body);
-
-    if (!body.token || body.token != process.env.SLACK_VERIFICATION_TOKEN) {
-      return context.fail('Access Denied');
-    }
-
-    if (body.text) {
-      var splitCommand = body.text.split(" ");
-      var command = _.first(splitCommand);
-      var args = _.rest(splitCommand);
-    }
-
-    if (commands[command]) {
-      response = commands[command](context, {
-        args: args,
-        userName: body.user_name
-      });
-    } else {
-      response = context.succeed({ text: 'This is the default response' });
-    }
-
-    return response;
-  };
-};
+module.exports.handler = slack.router({ token: process.env.SLACK_VERIFICATION_TOKEN }, {
+  ping: ['Ping the lambda', function(options, callback) {
+    callback(null, slack.inChannelResponse('Hello World'));
+  }]
+});

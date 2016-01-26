@@ -11,61 +11,19 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var _ = require('lodash'),
-  qs = require('qs');
+var SlackBot = require('localytics-slack');
 
-// Lambda Handler
-module.exports.handler = function(event, context) {
-  return exports.router(exports.commands())(event, context);
-};
+// Slack subcommands
+var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
 
-module.exports.commands = function() {
-  return {
-    ping: function(context, options) {
-      context.succeed({
-        text: 'Hello World',
-        response_type: 'in_channel'
-      });
-    },
-    help: function(context, options) {
-      context.succeed({
-        text: "Here's how to use {{basename}}:",
-        attachments: [
-          {
-            text: 'ping: Ensure this bot is running\n' +
-              'help: Show this help text'
-          }
-        ],
-        response_type: 'ephemeral'
-      });
-    }
-  };
-};
+slackBot.addCommand('ping', 'Ping the lambda', function(options, callback) {
+  callback(null, this.inChannelResponse('Hello World'));
+});
 
-module.exports.router = function (commands) {
-  return function (event, context) {
-    var response;
-    var body = qs.parse(event.body);
+slackBot.addCommand('whoami', 'Figure out who you are', function(options, callback) {
+  callback(null, this.ephemeralResponse(options.userName));
+});
 
-    if (!body.token || body.token != process.env.SLACK_VERIFICATION_TOKEN) {
-      return context.fail('Access Denied');
-    }
-
-    if (body.text) {
-      var splitCommand = body.text.split(" ");
-      var command = _.first(splitCommand);
-      var args = _.rest(splitCommand);
-    }
-
-    if (commands[command]) {
-      response = commands[command](context, {
-        args: args,
-        userName: body.user_name
-      });
-    } else {
-      response = context.succeed({ text: 'This is the default response' });
-    }
-
-    return response;
-  };
-};
+// Router configuration
+module.exports.handler = slackBot.buildRouter();
+module.exports.slackBot = slackBot;

@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- stable
+install:
+- bash install.sh
+script:
+- pushd testbot/nodejs
+- npm test
+- popd

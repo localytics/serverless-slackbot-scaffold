@@ -12,6 +12,7 @@
   "keywords": [],
   "devDependencies": {},
   "dependencies": {
+    "lodash": "^3.5.0",
     "qs": "^0.6.6",
     "serverless-helpers-js": "~0.0.3"
   }

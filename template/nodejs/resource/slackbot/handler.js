@@ -27,5 +27,5 @@ module.exports = {
   handler: slack.router({ token: process.env.SLACK_VERIFICATION_TOKEN }, {
     ping: ['Ping the lambda', this.ping],
     whoami: ['Figure out who you are', this.whoami]
-  }
+  })
 };

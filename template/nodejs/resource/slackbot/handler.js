@@ -13,17 +13,19 @@ var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 // Require Logic
 var slack = require('localytics-slack/slackbot');
 
-// Slack sub-functions
-module.exports.ping = function(options, callback) {
-  callback(null, slack.inChannelResponse('Hello World'));
-};
+// Function configuration
+module.exports = {
+  ping: function(options, callback) {
+    callback(null, slack.inChannelResponse('Hello World'));
+  },
 
-module.exports.whoami = function(options, callback) {
-  callback(null, slack.ephemeralResponse(options.userName));
-};
+  whoami: function(options, callback) {
+    callback(null, slack.ephemeralResponse(options.userName));
+  },
 
-// Lambda Handler
-module.exports.handler = slack.router({ token: process.env.SLACK_VERIFICATION_TOKEN }, {
-  ping: ['Ping the lambda', module.exports.ping],
-  whoami: ['Figure out who you are', module.exports.whoami]
-});
+  // Slack router configuration
+  handler: slack.router({ token: process.env.SLACK_VERIFICATION_TOKEN }, {
+    ping: ['Ping the lambda', this.ping],
+    whoami: ['Figure out who you are', this.whoami]
+  }
+};

@@ -6,6 +6,10 @@ Install khaos (https://github.com/segmentio/khaos)
 
     $ npm install -g khaos
 
-Run khaos
+Install the template to your local machine
 
-    $ khaos create localytics/slackbot-scaffold <project-name>
+    $ khaos install localytics/slackbot-scaffold slackbot
+
+Run the templating engine
+
+    $ khaos create slackbot <project-name>

@@ -1,0 +1,17 @@
+{
+  "name": "{{basename}} nodejs",
+  "version": "0.0.1",
+  "description": "Serverless module dependencies",
+  "author": "Localytics",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/localytics/{{basename}}"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "dependencies": {
+    "serverless-helpers-js": "~0.0.3"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "{{basename}} nodejs",
+  "name": "{{basename}}-nodejs",
   "version": "0.0.1",
   "description": "Serverless module dependencies",
   "author": "Localytics",

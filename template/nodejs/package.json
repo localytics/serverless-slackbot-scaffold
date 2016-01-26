@@ -11,7 +11,8 @@
   },
   "keywords": [],
   "devDependencies": {
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "sinon": "^1.14.1"
   },
   "dependencies": {
     "localytics-slack": "git+ssh://git@github.com/localytics/npm-slack.git",

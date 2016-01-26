@@ -36,6 +36,5 @@ node_modules
 .tmp
 
 #SERVERLESS STUFF
-admin.env
 .env
-_meta
+template/_meta/resources

@@ -1,0 +1,5 @@
+{
+  "project": "{{basename}}",
+  "projectBucket": "serverless.us-east-1.localytics",
+  "notificationEmail": "techops-alerts@localytics.com"
+}

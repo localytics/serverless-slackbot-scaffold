@@ -60,16 +60,10 @@ describe('handler', function() {
       }, context);
       expect(context.done).to.have.been.calledOnce();
       expect(context.done).to.have.been.calledWithExactly(
-        undefined, {
-          text: "Here's how to use {{basename}}:",
-          attachments: [
-            {
-              text: 'ping: Ping the lambda\n' +
-                'whoami: Figure out who you are'
-            }
-          ],
-          response_type: 'ephemeral'
-        }
+        slack.ephemeralResponse(
+          'ping: Ping the lambda\n' +
+          'whoami: Figure out who you are'
+        )
       );
     });
   });

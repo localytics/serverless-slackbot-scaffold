@@ -14,8 +14,12 @@ var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 var qs = require('qs');
 
 // Lambda Handler
+// module.exports.handler = function(event, context) {
+//   return exports.router(exports.commands())(event, context);
+// };
+
 module.exports.handler = function(event, context) {
-  return exports.router(exports.commands())(event, context);
+  context.done(null, { message: "Yay" });
 };
 
 module.exports.commands = function() {

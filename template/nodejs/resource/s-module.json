@@ -1,7 +1,7 @@
 {
   "name": "resource",
   "version": "0.0.1",
-  "profile": "aws-v0.1.2",
+  "profile": "aws-v0.2.0",
   "location": "https://github.com/localytics/{{basename}}",
   "author": "Localytics",
   "description": "Slackbot",

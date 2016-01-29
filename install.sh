@@ -3,9 +3,9 @@ khaos install localytics/slackbot-scaffold slackbot
 
 pushd ~/.khaos/slackbot
 if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
-  git checkout $TRAVIS_BRANCH
-else
   git checkout $TRAVIS_COMMIT
+else
+  git checkout $TRAVIS_BRANCH
 fi
 popd
 

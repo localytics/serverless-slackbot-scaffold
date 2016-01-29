@@ -4,7 +4,7 @@ npm install -g khaos
 khaos install localytics/slackbot-scaffold slackbot
 
 pushd ~/.khaos/slackbot
-if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
+if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
   git fetch origin +refs/pull/$TRAVIS_PULL_REQUEST/merge
   git checkout -qf FETCH_HEAD
 else

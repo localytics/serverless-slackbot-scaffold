@@ -17,11 +17,11 @@ var SlackBot = require('localytics-slack');
 var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
 
 slackBot.addCommand('ping', 'Ping the lambda', function(options, callback) {
-  callback(null, slackBot.inChannelResponse('Hello World'));
+  callback(null, this.inChannelResponse('Hello World'));
 });
 
 slackBot.addCommand('whoami', 'Figure out who you are', function(options, callback) {
-  callback(null, slackBot.ephemeralResponse(options.userName));
+  callback(null, this.ephemeralResponse(options.userName));
 });
 
 // Router configuration

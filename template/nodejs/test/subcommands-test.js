@@ -1,7 +1,6 @@
 var chai = require('chai'),
   expect = chai.expect,
-  handler = require('../resource/slackbot/handler'),
-  SlackBot = require('localytics-slack'),
+  slackBot = require('../resource/slackbot/handler').slackBot,
   sinon = require('sinon');
 
 chai.use(require('dirty-chai'));
@@ -20,20 +19,20 @@ describe('subcommands', function() {
   });
 
   it('responds to ping', function() {
-    handler.slackBot.callCommand('ping', null, callback);
+    slackBot.ping(null, callback);
     expect(callback).to.have.been.calledOnce();
     expect(callback).to.have.been.calledWithExactly(
       null,
-      handler.slackBot.inChannelResponse('Hello World')
+      slackBot.inChannelResponse('Hello World')
     );
   });
 
   it('responds to whoami', function() {
-    handler.slackBot.callCommand('whoami', { userName: 'foobar' }, callback);
+    slackBot.whoami({ userName: 'foobar' }, callback);
     expect(callback).to.have.been.calledOnce();
     expect(callback).to.have.been.calledWithExactly(
       null,
-      handler.slackBot.ephemeralResponse('foobar')
+      slackBot.ephemeralResponse('foobar')
     );
   });
 });

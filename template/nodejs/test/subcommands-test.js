@@ -24,7 +24,7 @@ describe('subcommands', function() {
     expect(callback).to.have.been.calledOnce();
     expect(callback).to.have.been.calledWithExactly(
       null,
-      slack.inChannelResponse('Hello World')
+      handler.slackBot.inChannelResponse('Hello World')
     );
   });
 
@@ -33,7 +33,7 @@ describe('subcommands', function() {
     expect(callback).to.have.been.calledOnce();
     expect(callback).to.have.been.calledWithExactly(
       null,
-      slack.ephemeralResponse('foobar')
+      handler.slackBot.ephemeralResponse('foobar')
     );
   });
 });

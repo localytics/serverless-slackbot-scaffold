@@ -1,13 +1,12 @@
 language: node_js
 node_js:
 - stable
-before_install:
-- BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 install:
 - npm install -g khaos
 - khaos install localytics/slackbot-scaffold slackbot
 - pushd ~/.khaos/slackbot
-- git checkout $BRANCH_NAME
+- git fetch origin +refs/pull/$TRAVIS_PULL_REQUEST/merge
+- git checkout -qd FETCH_HEAD
 - popd
 - yes test | khaos create slackbot testbot
 - pushd testbot/nodejs

@@ -5,8 +5,10 @@ install:
 - npm install -g khaos
 - khaos install localytics/slackbot-scaffold slackbot
 - pushd ~/.khaos/slackbot
-- git fetch origin +refs/pull/$TRAVIS_PULL_REQUEST/merge
-- git checkout -qd FETCH_HEAD
+- echo $TRAVIS_COMMIT
+- echo $TRAVIS_BRANCH
+- echo $TRAVIS_PULL_REQUEST
+- git checkout $TRAVIS_COMMIT
 - popd
 - yes test | khaos create slackbot testbot
 - pushd testbot/nodejs

@@ -25,5 +25,5 @@ slackBot.addCommand('whoami', 'Figure out who you are', function(options, callba
 });
 
 // Router configuration
-module.exports.handler = slackBot.router;
+module.exports.handler = slackBot.buildRouter();
 module.exports.slackBot = slackBot;

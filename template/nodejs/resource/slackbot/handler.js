@@ -11,19 +11,19 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var slack = require('localytics-slack');
+var SlackBot = require('localytics-slack');
 
 // Slack subcommands
-module.exports.ping = function(options, callback) {
-  callback(null, slack.inChannelResponse('Hello World'));
-};
+var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
 
-module.exports.whoami = function(options, callback) {
-  callback(null, slack.ephemeralResponse(options.userName));
-};
+slackBot.addCommand('ping', 'Ping the lambda', function(options, callback) {
+  callback(null, this.inChannelResponse('Hello World'));
+});
+
+slackBot.addCommand('whoami', 'Figure out who you are', function(options, callback) {
+  callback(null, this.ephemeralResponse(options.userName));
+});
 
 // Router configuration
-module.exports.handler = slack.router({ token: process.env.SLACK_VERIFICATION_TOKEN }, {
-  ping: ['Ping the lambda', module.exports.ping],
-  whoami: ['Figure out who you are', module.exports.whoami]
-});
+module.exports.handler = slackBot.router;
+module.exports.slackBot = slackBot;

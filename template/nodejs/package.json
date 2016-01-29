@@ -18,7 +18,7 @@
     "sinon-chai": "^2.7.0"
   },
   "dependencies": {
-    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git",
+    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.0",
     "serverless-helpers-js": "~0.0.3"
   },
   "scripts": {

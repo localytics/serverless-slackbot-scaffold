@@ -2,15 +2,7 @@ language: node_js
 node_js:
 - stable
 install:
-- npm install -g khaos
-- khaos install localytics/slackbot-scaffold slackbot
-- pushd ~/.khaos/slackbot
-- git checkout $TRAVIS_BRANCH
-- popd
-- yes test | khaos create slackbot testbot
-- pushd testbot/nodejs
-- npm install
-- popd
+- bash install.sh
 script:
 - pushd testbot/nodejs
 - npm test

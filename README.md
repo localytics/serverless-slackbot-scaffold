@@ -1,6 +1,5 @@
 #slackbot-scaffold
 
-
 ## Usage
 
 Build the integration in Slack (<https://localytics.slack.com/apps/manage/A0F82E8CA-slash-commands>) and retreive the slack verification token.

@@ -1,10 +1,14 @@
 #slackbot-scaffold
 
+[![Build Status](https://travis-ci.com/localytics/slackbot-scaffold.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/slackbot-scaffold)
+
+This project is a [khaos template](https://github.com/segmentio/khaos) for building an AWS lambda service that acts as a [Slack slash commands](https://api.slack.com/slash-commands) processor. It uses the [Serverless framework](https://github.com/serverless/serverless) for easier deployment to AWS.
+
 ## Usage
 
-Build the integration in Slack (<https://localytics.slack.com/apps/manage/A0F82E8CA-slash-commands>) and retreive the slack verification token.
+Build the slash command in Slack (<https://slack.com/apps/manage/custom-integrations>) and retreive the slack verification token.
 
-Install khaos (<https://github.com/segmentio/khaos>)
+Install khaos
 
     $ npm install -g khaos
 
@@ -16,15 +20,18 @@ Run the templating engine
 
     $ khaos create slackbot <project-name>
 
-Fill in the appropriate fields, using the verification token from when you created the integration in Slack.
+You will be prompted to fill in metadata fields about the project. The names and descriptions of each field are below:
 
-## Publishing
+* `slack-token`: The token displayed on the custom integration page in Slack.
+* `aws-access-key-id`: Your AWS access key id. This will be used for deploys, and will be gitignored.
+* `aws-secret-access-key`: Your AWS secret access key. As above, it will be used for deploys and gitignored.
+* `author`: The name of the author of this Slackbot. It is used inside of the two package.json files.
+* `github-user-or-org`: The owner of this repository. As above, it is used in the package.json files.
+* `aws-s3-bucket`: The bucket to which to deploy resources for the slackbot. This will need to follow the Serverless convention of having the region in the name, and will typically look something like serverless.us-east-1.localytics.
+* `notification-email`: The email to which to send notifications about the lambda.
 
-Once the templating is done, a few files should be added to the gitignore. They are in there so that they get the correct values from the template, but they are meant to stay only on a local machine. The files are:
+Once every field has been filled in, a new directory will be created that will contain your templated slackbot.
 
-* .env
-* admin.env
+## Development
 
-## Deployment
-
-For configuration, deployment, and testing instructions, refer to the templated README file within the new project directory.
+Refer to the templated README file within the new project directory for configuration, deployment, and testing instructions.

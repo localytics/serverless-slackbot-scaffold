@@ -8,7 +8,9 @@ This project uses the `localytics-slack` node module found here: <https://github
 
 Install the necessary node modules by running `npm install` in both the root directory and `nodejs` directory:
 
-    $ npm install; cd nodejs; npm install
+    $ npm install
+    $ cd nodejs
+    $ npm install
 
 ## Deployment
 
@@ -22,7 +24,8 @@ Then, deploy the resources:
 
 Next, deploy the function and endpoint:
 
-    $ cd nodejs; sls dash deploy -s <stage>
+    $ cd nodejs
+    $ sls dash deploy -s <stage>
 
 Take the postback url, enter it into the slack integration configuration, and save.
 
@@ -30,4 +33,5 @@ Take the postback url, enter it into the slack integration configuration, and sa
 
 `cd` into the correct directory and run `npm test`:
 
-    $ cd nodejs; npm test
+    $ cd nodejs
+    $ npm test

@@ -6,7 +6,7 @@ var chai = require('chai'),
 chai.use(require('dirty-chai'));
 chai.use(require('sinon-chai'));
 
-describe('subcommands', function() {
+describe('slackbot', function() {
   var callback, sandbox;
 
   beforeEach(function() {

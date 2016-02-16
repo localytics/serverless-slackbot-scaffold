@@ -9,5 +9,7 @@
     "type": "git",
     "url": "git://github.com/localytics/{{basename}}"
   },
-  "dependencies": {}
+  "dependencies": {
+    "serverless": "~0.4.2"
+  }
 }

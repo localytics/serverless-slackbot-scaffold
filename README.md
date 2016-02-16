@@ -2,7 +2,7 @@
 
 ## Usage
 
-Build the integration in Slack (<https://localytics.slack.com/apps/manage/A0F82E8CA-slash-commands>) and retreive the slack verification token.
+Build the slash command in Slack (<https://slack.com/apps/manage/custom-integrations>) and retreive the slack verification token.
 
 Install khaos (<https://github.com/segmentio/khaos>)
 

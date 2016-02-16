@@ -2,12 +2,12 @@
   "name": "{{basename}}-nodejs",
   "version": "0.0.1",
   "description": "Serverless module dependencies",
-  "author": "Localytics",
+  "author": "{{orgname}}",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/localytics/{{basename}}/tree/master/nodejs"
+    "url": "git://github.com/{{orgname}}/{{basename}}/tree/master/nodejs"
   },
   "keywords": [],
   "devDependencies": {

@@ -1,6 +1,6 @@
 var chai = require('chai'),
   expect = chai.expect,
-  slackBot = require('../resource/slackbot/handler').slackBot,
+  slackBot = require('../slackbot/handler').slackBot,
   sinon = require('sinon');
 
 chai.use(require('dirty-chai'));

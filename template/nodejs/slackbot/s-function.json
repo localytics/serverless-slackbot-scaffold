@@ -1,7 +1,8 @@
 {
   "name": "slackbot",
-  "handler": "resource/slackbot/handler.handler",
-  "runtime": "nodejs",
+  "customName": false,
+  "customRole": false,
+  "handler": "slackbot/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "custom": {

@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.3",
-    "serverless-helpers-js": "~0.0.3"
+    "serverless-helpers-js": "~0.1.0"
   },
   "scripts": {
     "test": "mocha"

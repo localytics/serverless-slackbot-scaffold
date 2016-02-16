@@ -1,74 +1,10 @@
 {
   "name": "{{basename}}",
   "version": "0.0.1",
-  "profile": "serverless-v0.2.0",
+  "profile": "serverless-v0.4.2",
   "location": "https://github.com/localytics/{{basename}}",
-  "author": "",
+  "author": "Localytics",
   "description": "{{basename}}",
   "custom": {},
-  "plugins": [],
-  "cloudFormation": {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "{{basename}} resources",
-    "Resources": {
-      "IamRoleLambda": {
-        "Type": "AWS::IAM::Role",
-        "Properties": {
-          "AssumeRolePolicyDocument": {
-            "Version": "2012-10-17",
-            "Statement": [
-              {
-                "Effect": "Allow",
-                "Principal": {
-                  "Service": [
-                    "lambda.amazonaws.com"
-                  ]
-                },
-                "Action": [
-                  "sts:AssumeRole"
-                ]
-              }
-            ]
-          },
-          "Path": "/"
-        }
-      },
-      "IamPolicyLambda": {
-        "Type": "AWS::IAM::Policy",
-        "Properties": {
-          "PolicyName": "${stage}-${project}-lambda",
-          "PolicyDocument": {
-            "Version": "2012-10-17",
-            "Statement": [
-              {
-                "Effect": "Allow",
-                "Action": [
-                  "logs:CreateLogGroup",
-                  "logs:CreateLogStream",
-                  "logs:PutLogEvents"
-                ],
-                "Resource": "arn:aws:logs:${region}:*:*"
-              }
-            ]
-          },
-          "Roles": [
-            {
-              "Ref": "IamRoleLambda"
-            }
-          ]
-        }
-      }
-    },
-    "Outputs": {
-      "IamRoleArnLambda": {
-        "Description": "ARN of the lambda IAM role",
-        "Value": {
-          "Fn::GetAtt": [
-            "IamRoleLambda",
-            "Arn"
-          ]
-        }
-      }
-    }
-  }
+  "plugins": []
 }

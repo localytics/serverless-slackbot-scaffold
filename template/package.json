@@ -1,13 +1,13 @@
 {
-  "name": "serverless-vyltlo",
+  "name": "{{basename}}",
   "version": "0.0.1",
-  "description": "A Serverless Project and its Serverless Plugin dependencies.",
-  "author": "me",
+  "description": "{{basename}}",
+  "author": "Localytics",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "git://github.com/localytics/{{basename}}"
   },
   "dependencies": {}
 }

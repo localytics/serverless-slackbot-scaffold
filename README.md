@@ -1,10 +1,14 @@
 #slackbot-scaffold
 
+[![Build Status](https://travis-ci.com/localytics/slackbot-scaffold.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/slackbot-scaffold)
+
+This project is a [khaos template](https://github.com/segmentio/khaos) for building an AWS lambda service that acts as a [Slack slash commands](https://api.slack.com/slash-commands) processor. It uses the [Serverless framework](https://github.com/serverless/serverless) for easier deployment to AWS.
+
 ## Usage
 
 Build the slash command in Slack (<https://slack.com/apps/manage/custom-integrations>) and retreive the slack verification token.
 
-Install khaos (<https://github.com/segmentio/khaos>)
+Install khaos
 
     $ npm install -g khaos
 
@@ -18,6 +22,6 @@ Run the templating engine
 
 Fill in the appropriate fields, using the verification token from when you created the integration in Slack.
 
-## Deployment
+## Development
 
-For configuration, deployment, and testing instructions, refer to the templated README file within the new project directory.
+Refer to the templated README file within the new project directory for configuration, deployment, and testing instructions.

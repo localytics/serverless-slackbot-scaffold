@@ -1,38 +1,26 @@
-var chai = require('chai'),
-  expect = chai.expect,
-  slackBot = require('../slackbot/handler').slackBot,
-  sinon = require('sinon');
-
-chai.use(require('dirty-chai'));
-chai.use(require('sinon-chai'));
+var expect = require('chai').expect;
+  slackBot = require('../slackbot/handler').slackBot;
 
 describe('slackbot', function() {
-  var callback, sandbox;
+  var received, receivedArgs, callback = function(error, success) {
+    received = true;
+    receivedArgs = [error, success];
+  };
 
   beforeEach(function() {
-    sandbox = sinon.sandbox.create();
-    callback = sandbox.spy();
-  });
-
-  afterEach(function() {
-    sandbox.restore();
+    received = false;
+    receivedArgs = [];
   });
 
   it('responds to ping', function() {
     slackBot.ping(null, callback);
-    expect(callback).to.have.been.calledOnce();
-    expect(callback).to.have.been.calledWithExactly(
-      null,
-      slackBot.inChannelResponse('Hello World')
-    );
+    expect(received).to.be.true;
+    expect(receivedArgs).to.deep.eq([null, slackBot.inChannelResponse('Hello World')]);
   });
 
-  it('responds to whoami', function() {
-    slackBot.whoami({ userName: 'foobar' }, callback);
-    expect(callback).to.have.been.calledOnce();
-    expect(callback).to.have.been.calledWithExactly(
-      null,
-      slackBot.ephemeralResponse('foobar')
-    );
+  it('responds to echo', function() {
+    slackBot.echo({ args: ['one', 'two', 'three'] }, callback);
+    expect(received).to.be.true;
+    expect(receivedArgs).to.deep.eq([null, slackBot.ephemeralResponse('one two three')]);
   });
 });

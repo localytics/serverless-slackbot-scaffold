@@ -2,23 +2,20 @@
   "name": "{{basename}}-nodejs",
   "version": "0.0.1",
   "description": "Serverless module dependencies",
-  "author": "Localytics",
+  "author": "{{author}}",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/localytics/{{basename}}/tree/master/nodejs"
+    "url": "git://github.com/{{github-user-or-org}}/{{basename}}/tree/master/nodejs"
   },
   "keywords": [],
   "devDependencies": {
     "chai": "^2.1.2",
-    "dirty-chai": "1.2.2",
-    "mocha": "^2.2.1",
-    "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0"
+    "mocha": "^2.2.1"
   },
   "dependencies": {
-    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.4",
+    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.5",
     "serverless-helpers-js": "~0.1.0"
   },
   "scripts": {

@@ -20,7 +20,7 @@ Run the templating engine
 
     $ khaos create slackbot <project-name>
 
-You will be prompted in fill in metadata fields about the project. The names and descriptions of each field are below:
+You will be prompted to fill in metadata fields about the project. The names and descriptions of each field are below:
 
 * `slack-token`: The token displayed on the custom integration page in Slack.
 * `aws-access-key-id`: Your AWS access key id. This will be used for deploys, and will be gitignored.

@@ -18,9 +18,9 @@ describe('slackbot', function() {
     expect(receivedArgs).to.deep.eq([null, slackBot.inChannelResponse('Hello World')]);
   });
 
-  it('responds to whoami', function() {
-    slackBot.whoami({ userName: 'foobar' }, callback);
+  it('responds to echo', function() {
+    slackBot.echo({ args: ['one', 'two', 'three'] }, callback);
     expect(received).to.be.true;
-    expect(receivedArgs).to.deep.eq([null, slackBot.ephemeralResponse('foobar')]);
+    expect(receivedArgs).to.deep.eq([null, slackBot.ephemeralResponse('one two three')]);
   });
 });

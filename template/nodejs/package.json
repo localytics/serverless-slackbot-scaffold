@@ -12,10 +12,7 @@
   "keywords": [],
   "devDependencies": {
     "chai": "^2.1.2",
-    "dirty-chai": "1.2.2",
-    "mocha": "^2.2.1",
-    "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0"
+    "mocha": "^2.2.1"
   },
   "dependencies": {
     "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.4",

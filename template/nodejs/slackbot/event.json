@@ -1,1 +1,1 @@
-{ "body": "token={{slack-token}}&text=ping" }
+{ "body": "token={{Slack Token}}&text=ping" }

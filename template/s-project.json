@@ -2,8 +2,8 @@
   "name": "{{basename}}",
   "version": "0.0.1",
   "profile": "serverless-v0.4.2",
-  "location": "https://github.com/{{orgname}}/{{basename}}",
-  "author": "{{orgname}}",
+  "location": "https://github.com/{{Github User/Organization}}/{{basename}}",
+  "author": "{{Author}}",
   "description": "{{basename}}",
   "custom": {},
   "plugins": []

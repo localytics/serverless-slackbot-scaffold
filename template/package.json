@@ -2,12 +2,12 @@
   "name": "{{basename}}",
   "version": "0.0.1",
   "description": "{{basename}}",
-  "author": "{{Author}}",
+  "author": "{{author}}",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/{{Github User/Organization}}/{{basename}}"
+    "url": "git://github.com/{{github-user-or-org}}/{{basename}}"
   },
   "dependencies": {
     "serverless": "~0.4.2"

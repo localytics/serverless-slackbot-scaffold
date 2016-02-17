@@ -1,5 +1,5 @@
 {
   "project": "{{basename}}",
-  "projectBucket": "{{AWS S3 Bucket}}",
-  "notificationEmail": "{{Notification Email}}"
+  "projectBucket": "{{aws-s3-bucket}}",
+  "notificationEmail": "{{notification-email}}"
 }

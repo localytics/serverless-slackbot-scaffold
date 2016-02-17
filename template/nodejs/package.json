@@ -2,12 +2,12 @@
   "name": "{{basename}}-nodejs",
   "version": "0.0.1",
   "description": "Serverless module dependencies",
-  "author": "{{Author}}",
+  "author": "{{author}}",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/{{Github User/Organization}}/{{basename}}/tree/master/nodejs"
+    "url": "git://github.com/{{github-user-or-org}}/{{basename}}/tree/master/nodejs"
   },
   "keywords": [],
   "devDependencies": {

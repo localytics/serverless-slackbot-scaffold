@@ -19,7 +19,7 @@ describe('slackbot', function() {
   });
 
   it('responds to echo', function() {
-    slackBot.echo({ args: ['one', 'two', 'three'] }, callback);
+    slackBot.echo({ args: { words: ['one', 'two', 'three'] } }, callback);
     expect(received).to.be.true;
     expect(receivedArgs).to.deep.eq([null, slackBot.ephemeralResponse('one two three')]);
   });

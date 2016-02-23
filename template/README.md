@@ -2,7 +2,7 @@
 
 ## Development
 
-This project uses the `localytics-slack` node module found here: <https://github.com/localytics/localytics-slack>. For documentation on how to add subcommands to the router, see the README.
+This project uses the `lambda-slack-router` node module found here: <https://github.com/localytics/lambda-slack-router>. For documentation on how to add subcommands to the router, see the README.
 
 ## Configuration
 

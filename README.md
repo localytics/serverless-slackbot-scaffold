@@ -1,4 +1,4 @@
-#slackbot-scaffold
+#serverless-slackbot-scaffold
 
 [![Build Status](https://travis-ci.com/localytics/slackbot-scaffold.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/slackbot-scaffold)
 
@@ -14,7 +14,7 @@ Install khaos
 
 Install the template to your local machine
 
-    $ khaos install localytics/slackbot-scaffold slackbot
+    $ khaos install localytics/serverless-slackbot-scaffold slackbot
 
 Run the templating engine
 

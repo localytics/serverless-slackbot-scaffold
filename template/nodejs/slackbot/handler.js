@@ -11,7 +11,7 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var SlackBot = require('localytics-slack');
+var SlackBot = require('lambda-slack-router');
 
 // Slack subcommands
 var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });

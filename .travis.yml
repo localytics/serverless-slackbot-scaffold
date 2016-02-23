@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - stable
 install:
-- bash ci/install.sh
+- bash extras/install.sh
 script:
 - pushd testbot/nodejs
 - npm test

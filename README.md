@@ -30,6 +30,8 @@ You will be prompted to fill in metadata fields about the project. The names and
 * `aws-s3-bucket`: The bucket to which to deploy resources for the slackbot. This will need to follow the Serverless convention of having the region in the name, and will typically look something like serverless.us-east-1.localytics.
 * `notification-email`: The email to which to send notifications about the lambda.
 
+![Khaos usage](extras/khaos-usage.gif)
+
 Once every field has been filled in, a new directory will be created that will contain your templated slackbot.
 
 ## Development

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 npm install -g khaos
-khaos install localytics/slackbot-scaffold slackbot
+khaos install localytics/serverless-slackbot-scaffold slackbot
 
 pushd ~/.khaos/slackbot
 if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then

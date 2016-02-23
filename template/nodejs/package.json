@@ -15,7 +15,7 @@
     "mocha": "^2.2.1"
   },
   "dependencies": {
-    "localytics-slack": "git+ssh://git@github.com/localytics/localytics-slack.git#v1.6",
+    "lambda-slack-router": "~1.0.2",
     "serverless-helpers-js": "~0.1.0"
   },
   "scripts": {

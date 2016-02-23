@@ -1,6 +1,6 @@
-#slackbot-scaffold
+#serverless-slackbot-scaffold
 
-[![Build Status](https://travis-ci.com/localytics/slackbot-scaffold.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/slackbot-scaffold)
+[![Build Status](https://travis-ci.com/localytics/serverless-slackbot-scaffold.svg?token=kQUiABmGkzyHdJdMnCnv&branch=master)](https://travis-ci.com/localytics/serverless-slackbot-scaffold)
 
 This project is a [khaos template](https://github.com/segmentio/khaos) for building an AWS lambda service that acts as a [Slack slash commands](https://api.slack.com/slash-commands) processor. It uses the [Serverless framework](https://github.com/serverless/serverless) for easier deployment to AWS.
 
@@ -14,7 +14,7 @@ Install khaos
 
 Install the template to your local machine
 
-    $ khaos install localytics/slackbot-scaffold slackbot
+    $ khaos install localytics/serverless-slackbot-scaffold slackbot
 
 Run the templating engine
 

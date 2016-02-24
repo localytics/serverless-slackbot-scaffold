@@ -36,7 +36,7 @@ slackBot.addCommand('search query', 'Search twitter for a specific word and retu
       callback(error, null);
     }
     else {
-      var text = tweets.statuses.map(function(tweet) {
+      var text = tweets.statuses.slice(0, 10).map(function(tweet) {
         return '@' + tweet.user.screen_name + ': ' + tweet.text;
       }).join("\n");
 

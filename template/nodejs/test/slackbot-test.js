@@ -1,5 +1,8 @@
-var expect = require('chai').expect;
 var slackBot = require('../slackbot/handler').slackBot;
+var chai = require('chai');
+var expect = chai.expect;
+
+chai.use(require('dirty-chai'));
 
 describe('slackbot', function () {
   var received;
@@ -16,13 +19,13 @@ describe('slackbot', function () {
 
   it('responds to ping', function () {
     slackBot.ping(null, callback);
-    expect(received).to.eq(true);
+    expect(received).to.be.true();
     expect(receivedArgs).to.deep.eq([null, slackBot.inChannelResponse('Hello World')]);
   });
 
   it('responds to echo', function () {
     slackBot.echo({ args: { words: ['one', 'two', 'three'] } }, callback);
-    expect(received).to.eq(true);
+    expect(received).to.be.true();
     expect(receivedArgs).to.deep.eq([null, slackBot.ephemeralResponse('one two three')]);
   });
 });

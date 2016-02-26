@@ -12,6 +12,7 @@
   "keywords": [],
   "devDependencies": {
     "chai": "^2.1.2",
+    "dirty-chai": "^1.2.2",
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
     "mocha": "^2.2.1"
@@ -32,7 +33,7 @@
     },
     "rules": {
       "func-names": 0,
-      "no-unused-vars": 1
+      "no-unused-vars": 0
     }
   }
 }

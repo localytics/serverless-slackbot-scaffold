@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm install -g khaos
+npm install -g git+https://github.com/segmentio/khaos.git#a122583
 khaos install localytics/serverless-slackbot-scaffold slackbot
 
 pushd ~/.khaos/slackbot

@@ -6,6 +6,10 @@ This project uses the `lambda-slack-router` node module found here: <https://git
 
 ## Configuration
 
+Install the serverless cli:
+
+    $ npm install -g serverless
+
 Install the necessary node modules by running `npm install` in both the root directory and `nodejs` directory:
 
     $ npm install

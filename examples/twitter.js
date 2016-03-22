@@ -4,39 +4,39 @@
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 // Require Logic
-var SlackBot = require('lambda-slack-router'),
-  Twitter = require('twitter');
+var SlackBot = require('lambda-slack-router');
+var Twitter = require('twitter');
 
 // Slack subcommands
-var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN }),
-  twitter = new Twitter({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-  });
+var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
+var twitter = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+});
 
-slackBot.addCommand('tweet message...', 'Tweet out the given message', function(options, callback) {
+slackBot.addCommand('tweet', ['message...'], 'Tweet out the given message', function (options, callback) {
   var _this = this;
-  twitter.post('statuses/update', { status: options.args.message.join(' ') }, function(error, tweet, response) {
+  twitter.post('statuses/update', { status: options.args.message.join(' ') }, function (error, tweet, response) {
     if(error) {
       callback(error, null);
-    }
-    else {
+    } else {
       var text = 'Tweet successfully posted! ' + 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str;
       callback(null, _this.ephemeralResponse(text));
     }
   });
 });
 
-slackBot.addCommand('search query', 'Search twitter for a specific word and return the first 10 tweets', function(options, callback) {
+slackBot.addCommand('search', ['query'], 'Search twitter for a specific word and return the first 10 tweets', function (options, callback) {
   var _this = this;
-  twitter.get('search/tweets', { q: options.args.query }, function(error, tweets, response) {
+  twitter.get('search/tweets', { q: options.args.query }, function (error, tweets, response) {
+    var text;
+
     if(error) {
       callback(error, null);
-    }
-    else {
-      var text = tweets.statuses.slice(0, 10).map(function(tweet) {
+    } else {
+      text = tweets.statuses.slice(0, 10).map(function (tweet) {
         return '@' + tweet.user.screen_name + ': ' + tweet.text;
       }).join("\n");
 

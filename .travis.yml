@@ -4,7 +4,7 @@ node_js:
 install:
 - bash extras/install.sh
 script:
-- pushd testbot/nodejs
+- pushd testbot
 - npm run lint
 - npm test
 - popd

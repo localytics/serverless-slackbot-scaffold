@@ -6,36 +6,25 @@ This project uses the `lambda-slack-router` node module found here: <https://git
 
 ## Configuration
 
-Install the serverless cli:
-
-    $ npm install -g serverless
-
-Install the necessary node modules by running `npm install` in both the root directory and `nodejs` directory:
+Install the necessary node modules by running `npm install` in both the root directory and `slackbot` directory:
 
     $ npm install
-    $ cd nodejs
+    $ cd slackbot
     $ npm install
 
 ## Deployment
 
-First, set the env variable in AWS using Serverless:
-
-    $ sls env set -s <stage> -k SLACK_VERIFICATION_TOKEN -v <token>
-
-Then, deploy the resources:
+Deploy the resources:
 
     $ sls resources deploy -s <stage>
 
 Next, deploy the function and endpoint:
 
-    $ cd nodejs
+    $ cd slackbot
     $ sls dash deploy -s <stage>
 
 Take the postback url, enter it into the slack integration configuration, and save.
 
 ## Testing
 
-`cd` into the correct directory and run `npm test`:
-
-    $ cd nodejs
     $ npm test

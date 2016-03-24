@@ -37,3 +37,7 @@ Once every field has been filled in, a new directory will be created that will c
 ## Development
 
 Refer to the templated README file within the new project directory for configuration, deployment, and testing instructions.
+
+## Testing
+
+For testing the template itself, run `extras/test.sh`. Note for test speed, the dependencies are then cached for all subsequent runs in `cache`.

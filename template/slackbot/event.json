@@ -1,0 +1,6 @@
+{
+  "body": {
+    "token": "{{slack-token}}",
+    "text": "ping"
+  }
+}

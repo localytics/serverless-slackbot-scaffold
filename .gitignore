@@ -37,3 +37,7 @@ node_modules
 
 #SERVERLESS STUFF
 template/_meta/resources
+
+# node module caches for testing
+cache
+

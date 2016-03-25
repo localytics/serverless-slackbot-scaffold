@@ -2,9 +2,9 @@ language: node_js
 node_js:
 - stable
 install:
-- bash extras/install.sh
+- bin/travis-install
 script:
-- pushd testbot/nodejs
+- pushd testbot
 - npm run lint
 - npm test
 - popd

@@ -1,10 +1,4 @@
 {
   "name": "{{basename}}",
-  "version": "0.0.1",
-  "profile": "serverless-v0.4.2",
-  "location": "https://github.com/{{github-user-or-org}}/{{basename}}",
-  "author": "{{author}}",
-  "description": "{{basename}}",
-  "custom": {},
-  "plugins": []
+  "custom": {}
 }

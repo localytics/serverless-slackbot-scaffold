@@ -1,5 +1,2 @@
 language: node_js
-node_js:
-- stable
-before_install:
-- cd nodejs
+node_js: stable

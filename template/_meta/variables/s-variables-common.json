@@ -1,5 +1,4 @@
 {
   "project": "{{basename}}",
-  "projectBucket": "{{aws-s3-bucket}}",
-  "notificationEmail": "{{notification-email}}"
+  "slack-token": "{{slack-token}}"
 }

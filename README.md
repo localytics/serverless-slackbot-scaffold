@@ -40,4 +40,4 @@ Refer to the templated README file within the new project directory for configur
 
 ## Testing
 
-For testing the template itself, run `extras/test.sh`. Note for test speed, the dependencies are then cached for all subsequent runs in `cache`.
+For testing the template itself, run `bin/test`. Note for test speed, the dependencies are then cached for all subsequent runs in `cache`.

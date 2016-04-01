@@ -22,13 +22,9 @@ Run the templating engine
 
 You will be prompted to fill in metadata fields about the project. The names and descriptions of each field are below:
 
-* `slack-token`: The token displayed on the custom integration page in slack.
-* `aws-access-key-id`: Your AWS access key id. This will be used for deploys, and will be gitignored.
-* `aws-secret-access-key`: Your AWS secret access key. As above, it will be used for deploys and gitignored.
+* `aws-profile`: The AWS profile in `$HOME/.aws/credentials` that will be used for deployment.
 * `author`: The name of the author of this slackbot. It is used inside of the two package.json files.
-* `github-user-or-org`: The owner of this repository. As above, it is used in the package.json files.
-* `aws-s3-bucket`: The bucket to which to deploy resources for the slackbot. This will need to follow the Serverless convention of having the region in the name, and will typically look something like serverless.us-east-1.localytics.
-* `notification-email`: The email to which to send notifications about the lambda.
+* `slack-token`: The token displayed on the custom integration page in slack.
 
 ![Khaos usage](extras/khaos-usage.gif)
 

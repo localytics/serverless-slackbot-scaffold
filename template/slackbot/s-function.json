@@ -1,6 +1,6 @@
 {
   "name": "slackbot",
-  "runtime": "nodejs",
+  "runtime": "babel",
   "customName": "slackbot",
   "customRole": false,
   "handler": "handler.handler",

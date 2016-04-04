@@ -1,42 +1,33 @@
 'use strict';
 
-// Require Serverless ENV vars
-var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
+import GitHub from 'github';
+import SlackBot from 'lambda-slack-router';
 
-// Require Logic
-var GitHub = require('github');
-var SlackBot = require('lambda-slack-router');
-
-// Slack subcommands
-var github = new GitHub({ version: '3.0.0' });
-var slackBot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
+const github = new GitHub({ version: '3.0.0' });
+const slackbot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
 
 github.authenticate({ type: 'token', token: process.env.GITHUB_TOKEN });
 
-slackBot.addCommand('repo', ['path'], 'Get metadata about a repo', function (options, callback) {
-  var _this = this;
-  var split = options.args.path.split('/');
+slackbot.addCommand('repo', ['path'], 'Get metadata about a repo', (options, callback) => {
+  const split = options.args.path.split('/');
 
-  github.repos.get({ user: split[0], repo: split[1] }, function (err, res) {
-    if(err) {
+  github.repos.get({ user: split[0], repo: split[1] }, (err, res) => {
+    if (err) {
       callback(err, null);
     } else {
-      callback(null, _this.inChannelResponse(JSON.stringify(res)));
+      callback(null, slackbot.inChannelResponse(JSON.stringify(res)));
     }
   });
 });
 
-slackBot.addCommand('user', ['name'], 'Get metadata about a user', function (options, callback) {
-  var _this = this;
-
-  github.user.get({ user: options.args.name }, function (err, res) {
-    if(err) {
+slackbot.addCommand('user', ['name'], 'Get metadata about a user', (options, callback) => {
+  github.user.get({ user: options.args.name }, (err, res) => {
+    if (err) {
       callback(err, null);
     } else {
-      callback(null, _this.inChannelResponse(JSON.stringify(res)));
+      callback(null, slackbot.inChannelResponse(JSON.stringify(res)));
     }
   });
 });
 
-// Router configuration
-module.exports.handler = slackBot.buildRouter();
+module.exports.handler = slackbot.buildRouter();

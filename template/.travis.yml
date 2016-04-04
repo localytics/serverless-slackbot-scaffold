@@ -1,2 +1,13 @@
 language: node_js
-node_js: stable
+node_js:
+  - stable
+install:
+  - npm install
+  - pushd slackbot && npm install && popd
+script:
+  - npm run lint
+  - npm test
+cache:
+  directories:
+    - node_modules
+    - slackbot/node_modules

@@ -28,7 +28,7 @@ You will be prompted to fill in metadata fields about the project. The names and
 
 ![Khaos usage](extras/khaos-usage.gif)
 
-Once every field has been filled in, a new directory will be created that will contain your templated slackbot.
+Once every field has been filled in, a new directory will be created that will contain your templated slackbot. If you prefer to have different stages and regions configured for your slackbot that the default ones (dev and us-east-1) you can rebuild the _meta directory using `sls project init` once you've installed the `serverless` CLI.
 
 ## Development
 

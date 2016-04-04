@@ -6,6 +6,6 @@
   "private": true,
   "keywords": [],
   "dependencies": {
-    "lambda-slack-router": "~1.2.0"
+    "lambda-slack-router": "~1.2.1"
   }
 }

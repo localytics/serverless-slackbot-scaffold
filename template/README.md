@@ -16,15 +16,16 @@ Install the necessary node modules by running `npm install` in both the root dir
 
 Deploy the resources:
 
-    $ sls resources deploy -s <stage>
+    $ sls resources deploy
 
 Next, deploy the function and endpoint:
 
     $ cd slackbot
-    $ sls dash deploy -s <stage>
+    $ sls dash deploy
 
 Take the postback url, enter it into the slack integration configuration, and save.
 
 ## Testing
 
+    $ npm run lint
     $ npm test

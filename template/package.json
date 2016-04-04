@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
-    "lint": "eslint slackbot/*.js test/*.js"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "lint": "eslint ."
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",

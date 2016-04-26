@@ -11,8 +11,8 @@ const twitter = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
-slackbot.addCommand('tweet', ['message...'], 'Tweet out the given message', (options, callback) => {
-  twitter.post('statuses/update', { status: options.args.message.join(' ') }, (error, tweet) => {
+slackbot.addCommand('tweet', ['message...'], 'Tweet out the given message', (event, callback) => {
+  twitter.post('statuses/update', { status: event.args.message.join(' ') }, (error, tweet) => {
     if (error) {
       callback(error, null);
     } else {
@@ -22,8 +22,8 @@ slackbot.addCommand('tweet', ['message...'], 'Tweet out the given message', (opt
   });
 });
 
-slackbot.addCommand('search', ['query'], 'Search twitter for a specific word and return the first 10 tweets', (options, callback) => {
-  twitter.get('search/tweets', { q: options.args.query }, (error, tweets) => {
+slackbot.addCommand('search', ['query'], 'Search twitter for a specific word and return the first 10 tweets', (event, callback) => {
+  twitter.get('search/tweets', { q: event.args.query }, (error, tweets) => {
     let text;
 
     if (error) {
@@ -32,7 +32,7 @@ slackbot.addCommand('search', ['query'], 'Search twitter for a specific word and
       text = tweets.statuses.slice(0, 10).map(tweet => `@${tweet.user.screen_name}: ${tweet.text}`).join('\n');
 
       callback(null, slackbot.inChannelResponse({
-        text: `The following tweets contain the word "${options.args.query}":`,
+        text: `The following tweets contain the word "${event.args.query}":`,
         attachments: [{ text }],
       }));
     }

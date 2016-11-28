@@ -13,6 +13,4 @@ fi
 popd
 
 yes test | khaos create slackbot testbot
-pushd testbot && npm install
-pushd slackbot && npm install
-popd && popd
+pushd testbot && npm install && popd

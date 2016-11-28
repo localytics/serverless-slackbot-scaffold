@@ -1,6 +1,0 @@
-{
-  "name": "{{basename}}",
-  "plugins": [
-    "serverless-runtime-babel"
-  ]
-}

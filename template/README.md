@@ -6,22 +6,15 @@ This project uses the `lambda-slack-router` node module found here: <https://git
 
 ## Configuration
 
-Install the necessary node modules by running `npm install` in both the root directory and `slackbot` directory:
+Install the necessary node modules by running `npm install` in the root of the repository:
 
-    $ npm install
-    $ cd slackbot
     $ npm install
 
 ## Deployment
 
-Deploy the resources:
+This project uses `serverless` for deployment. Trigger the `serverless` CLI through the `sls` command, and use that to deploy:
 
-    $ sls resources deploy
-
-Next, deploy the function and endpoint:
-
-    $ cd slackbot
-    $ sls dash deploy
+    $ sls deploy
 
 Take the postback url, enter it into the slack integration configuration, and save.
 

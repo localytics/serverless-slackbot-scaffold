@@ -20,15 +20,7 @@ Run the templating engine
 
     $ khaos create slackbot <project-name>
 
-You will be prompted to fill in metadata fields about the project. The names and descriptions of each field are below:
-
-* `aws-profile`: The AWS profile in `$HOME/.aws/credentials` that will be used for deployment.
-* `author`: The name of the author of this slackbot. It is used inside of the two package.json files.
-* `slack-token`: The token displayed on the custom integration page in slack.
-
-![Khaos usage](extras/khaos-usage.gif)
-
-Once every field has been filled in, a new directory will be created that will contain your templated slackbot. If you prefer to have different stages and regions configured for your slackbot than the default ones (dev and us-east-1) you can rebuild the \_meta directory using `sls project init` once you've installed the `serverless` CLI.
+Enter the slack token and hit enter. A new directory will be created that will contain your templated slackbot. If you prefer to have different stages and regions configured for your slackbot, you can modify those settings in `serverless.yml`. See the `Serverless` docs for more information.
 
 ## Development
 
@@ -36,4 +28,4 @@ Refer to the templated README file within the new project directory for configur
 
 ## Testing
 
-For testing the template itself, run `bin/test`. Note for test speed, the dependencies are then cached for all subsequent runs in `cache`.
+For testing the template itself, run `bin/test`. Note for test speed, the dependencies are then cached for all subsequent runs in `cache.tar`.

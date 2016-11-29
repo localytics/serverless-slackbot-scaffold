@@ -1,4 +1,4 @@
-service: {{base-name}}
+service: {{basename}}
 
 provider:
   name: aws

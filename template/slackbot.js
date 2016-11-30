@@ -1,6 +1,6 @@
 'use strict';
 
-const SlackBot = require('lambda-slack-router');
+import SlackBot from 'lambda-slack-router';
 const slackbot = new SlackBot({ token: process.env.SLACK_VERIFICATION_TOKEN });
 
 slackbot.addCommand('ping', 'Ping the lambda', (options, callback) => {

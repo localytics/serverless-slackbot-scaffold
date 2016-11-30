@@ -1,6 +1,6 @@
-const { slackbot } = require('../slackbot');
-const chai         = require('chai');
-const sinon        = require('sinon');
+import { slackbot } from '../slackbot';
+import chai from 'chai';
+import sinon from 'sinon';
 
 const expect = chai.expect;
 chai.use(require('dirty-chai'));

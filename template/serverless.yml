@@ -23,3 +23,6 @@ functions:
             application/x-www-form-urlencoded: "{\"body\" : $input.json(\"$\")}"
     environment:
       SLACK_TOKEN: {{slack-token}}
+
+plugins:
+- serverless-webpack

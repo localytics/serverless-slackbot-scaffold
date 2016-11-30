@@ -1,0 +1,28 @@
+service: {{basename}}
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: us-east-1
+
+package:
+  exclude:
+  - test/**
+
+functions:
+  slackbot:
+    handler: slackbot.handler
+    events:
+    - http:
+        path: slack/slashcommand
+        method: post
+        integration: lambda
+        request:
+          template:
+            application/x-www-form-urlencoded: "{\"body\" : $input.json(\"$\")}"
+    environment:
+      SLACK_TOKEN: {{slack-token}}
+
+plugins:
+- serverless-webpack

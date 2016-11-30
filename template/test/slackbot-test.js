@@ -1,4 +1,4 @@
-import { slackbot } from '../slackbot/handler';
+import { slackbot } from '../slackbot';
 import chai from 'chai';
 import sinon from 'sinon';
 
@@ -16,12 +16,16 @@ describe('handler', () => {
   it('/ping', () => {
     slackbot.ping(null, callback);
     expect(callback).to.have.been.calledOnce();
-    expect(callback).to.have.been.calledWithExactly(null, slackbot.inChannelResponse('Hello World'));
+
+    const response = slackbot.inChannelResponse('Hello World');
+    expect(callback).to.have.been.calledWithExactly(null, response);
   });
 
   it('/echo', () => {
     slackbot.echo({ args: { words: ['one', 'two', 'three'] } }, callback);
     expect(callback).to.have.been.calledOnce();
-    expect(callback).to.have.been.calledWithExactly(null, slackbot.ephemeralResponse('one two three'));
+
+    const response = slackbot.ephemeralResponse('one two three');
+    expect(callback).to.have.been.calledWithExactly(null, response);
   });
 });

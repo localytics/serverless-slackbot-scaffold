@@ -7,6 +7,10 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.json$/, 
+        loaders: ['json']
       }
     ]
   }
